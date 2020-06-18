@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: [12.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -22,4 +22,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm i
       - run: npm run build
+      - run: rm -rf /home/wwwroot/build
       - run: mv /home/actions/actions-runner/_work/homepage/homepage/build /home/wwwroot
