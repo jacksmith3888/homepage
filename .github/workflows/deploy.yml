@@ -22,3 +22,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm i
       - run: npm run build
+      - run: mv /home/actions/actions-runner/_work/homepage/homepage/build /home/wwwroot
